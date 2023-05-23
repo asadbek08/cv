@@ -122,15 +122,15 @@ hr {
 }
 .middle-container{
   padding: 50px 500px 50px 500px;
-  margin: 0 100px 0 100px;
+  margin: auto;
 
   position: relative;
-  background-color: #21209C;
+  background-color: #A6D0DD;
 
 }
 
 .middle-container p{
-  color
+  color: #394867;
 }
 .skills p{
   line-height: 3;
