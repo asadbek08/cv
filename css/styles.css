@@ -120,13 +120,20 @@ hr {
   background-image: linear-gradient(to bottom, #30E32B, #2BC4AD);
   text-decoration: none;
 }
-.middle-container{
-  padding: 50px 500px 50px 500px;
+.middle-container {
+  padding: 50px 10%;
   margin: auto;
+  max-width: 1200px; /* Set a maximum width for the container */
 
   position: relative;
   background-color: #A6D0DD;
+}
 
+@media screen and (max-width: 768px) {
+  /* Apply styles when the screen width is 768px or less */
+  .middle-container {
+    padding: 50px 5%;
+  }
 }
 
 .middle-container p{
