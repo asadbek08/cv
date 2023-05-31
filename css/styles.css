@@ -19,11 +19,55 @@ body{
 .nav-link{
   color : #93DEFF;
 }
-.navbar{
-  padding-left: 250px;
-  padding-right: 250px;
+.navbar {
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #007BFF; /* Updated color for the collapsing navbar */
 }
 
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%236699cc' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23a0c5e8' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.bg-blue {
+  background-color: #3F72AF !important;
+}
+
+
+
+/* Contact and Testimonials Sections */
+#footer, #pricing, #testimonials {
+  padding: 50px 10%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Apply styles when the screen width is 768px or less */
+  #footer, #pricing, #testimonials {
+    padding: 50px 5%;
+  }
+}
 
 .main-footer{
   size : 30%;
@@ -55,15 +99,24 @@ h2{
 }
 
 .alg-pic{
-  width:25%;
+  width:20%;
   float: left;
   margin-right: 50px;
+  border: none; 
 }
+.node-pic{
+  width:40%;
+  float: left;
+  margin-right: 50px;
+  border: none; 
+}
+
 
 .card{
   width:25%;
   float: right;
   margin-left: 50px;
+  border: none; 
 }
 h3{
   line-height: 2;
@@ -147,7 +200,12 @@ hr {
 .skills h3{
   color: #1687A7;
   font-size: 2.5rem;
+
+}.skill-description-left{
+  text-align: left;
 }
+
+
 
 .bottom-container{
   padding: 10px 0 10px 0;
@@ -155,6 +213,6 @@ hr {
 
 }
 .copyright{
-  color: #EAF6F6
+  color: #EAF6F6;
   padding: 20px 0;
 }
