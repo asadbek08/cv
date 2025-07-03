@@ -260,7 +260,7 @@ const SimpleCard = ({ children, className = "", delay = 0 }: { children: React.R
   );
 };
 
-const SkillBadge = ({ skill, icon: Icon, color, delay = 0 }: { skill: string; icon: React.ComponentType<any>; color: string; delay?: number }) => {
+const SkillBadge = ({ skill, icon: Icon, color, delay = 0 }: { skill: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; color: string; delay?: number }) => {
   const [ref, inView] = useInView();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -452,7 +452,7 @@ export default function Home() {
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
-                  Hi, I'm {myCvData.name.split(" ")[0]}
+                  Hi, I&apos;m {myCvData.name.split(" ")[0]}
                 </span>
               </h1>
               
@@ -871,10 +871,10 @@ export default function Home() {
           <div className="container mx-auto text-center">
             <div className="mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Let's Work Together
+                Let&apos;s Work Together
               </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Ready to bring your ideas to life? Let's discuss how we can create something amazing together.
+                Ready to bring your ideas to life? Let&apos;s discuss how we can create something amazing together.
               </p>
             </div>
             
@@ -1023,7 +1023,7 @@ export default function Home() {
         <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto bg-white hide-scrollbar">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Let's Start a Conversation
+              Let&apos;s Start a Conversation
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-6">
