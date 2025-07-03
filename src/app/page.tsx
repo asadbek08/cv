@@ -2,63 +2,38 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { useSpring, animated, useTrail, useInView, config } from '@react-spring/web';
+import { useSpring, animated, useInView, config } from '@react-spring/web';
 import { 
   FaLinkedin, 
-  FaGithub, 
-  FaFacebookF, 
-  FaInstagram, 
-  FaTwitter,
+  FaGithub,
   FaPython,
   FaJs,
   FaReact,
-  FaDatabase,
-  FaCode,
-  FaBrain,
-  FaChartLine,
-  FaRocket,
-  FaGraduationCap,
-  FaAward,
-  FaLanguage
+  FaCode
 } from 'react-icons/fa';
 import { 
-  MdEmail, 
-  MdPhone, 
-  MdLocationOn,
-  MdWork,
-  MdSchool,
-  MdStar,
-  MdTrendingUp,
-  MdSpeed,
-  MdPrecisionManufacturing
+  MdWork
 } from 'react-icons/md';
 import { 
   SiTensorflow, 
   SiScikitlearn, 
   SiPandas, 
   SiNumpy, 
-  SiPostgresql, 
-  SiMysql,
+  SiPostgresql,
   SiNextdotjs,
-  SiGooglecloud,
-  SiGit,
-  SiDocker
+  SiGit
 } from 'react-icons/si';
 import { 
   Brain, 
   Zap, 
-  Target, 
-  Lightbulb, 
-  Cpu, 
   BarChart3,
   Globe,
   Users,
   Award,
   Calendar,
-  ExternalLink,
   Download,
   Mail,
   Phone,
@@ -772,14 +747,6 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                    {project.link && (
-                      <Link href={project.link}>
-                        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 transform hover:scale-105 cursor-pointer">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View Project
-                        </Button>
-                      </Link>
-                    )}
                   </div>
                 </SimpleCard>
               ))}
