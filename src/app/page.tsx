@@ -104,6 +104,8 @@ interface JobExperience {
   company: string;
   duration: string;
   description: string[];
+  link?: string;
+  logo?: string;
 }
 
 interface Project {
@@ -145,6 +147,8 @@ const myCvData: CvData = {
         "Designed and implemented end-to-end pipelines to transform unstructured inputs—such as PDFs, spreadsheets, and audio—into structured, actionable data. Created logic for product identification, attribute extraction, and dynamic cost evaluation using LLM-based approaches.",
         "Delivered a responsive, AI-assisted frontend interface to enable real-time feedback, structured editing, and human-in-the-loop control. Focused on creating an intuitive user experience that bridges AI output with manual refinement when needed.",
       ],
+      link: "https://sapienta.ai/",
+      logo: "/assets/img/sapienza.png",
     },
     {
       title: "Team Member",
@@ -154,6 +158,8 @@ const myCvData: CvData = {
         "Collaborated with engineers and researchers to develop and deploy machine learning and computer vision algorithms for autonomous drone navigation, leveraging deep learning (CNNs) and reinforcement learning for real-time decision-making and collision avoidance.",
         "Integrated AI models into embedded drone systems, utilizing Python, TensorFlow, and OpenCV for testing and optimization of flight paths, sensor fusion, and automation in dynamic environments.",
       ],
+      link: "https://www.draftpolito.it/",
+      logo: "/assets/img/draft.jpeg",
     },
     {
       title: "Data Scientist, Internship",
@@ -163,6 +169,8 @@ const myCvData: CvData = {
         "Automated CRM and data entry operations by integrating Google Sheets, Apps Script, and HubSpot API, synchronizing 1,000+ data points in real time and saving 20+ hours/week with 100% accuracy.",
         "Built and fine-tuned LLM-driven candidate ranking models (LLAMA2, MiniLM) on a 30,000+ CV dataset, improving match accuracy by 40% through score-based recommendation pipelines.",
       ],
+      link: "https://tapartners.org/",
+      logo: "/assets/img/taporg.jpeg",
     },
   ],
   projects: [
@@ -673,15 +681,33 @@ export default function Home() {
                   <SimpleCard key={index} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100" delay={index * 100}>
                     <div className="flex flex-col md:flex-row md:items-start gap-6">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                          <MdWork className="w-8 h-8 text-white" />
-                        </div>
+                        {job.logo ? (
+                          <Link href={job.link || "#"} target="_blank" rel="noopener noreferrer" className="block">
+                            <Image
+                              src={job.logo}
+                              alt={`${job.company} logo`}
+                              width={64} // or desired size
+                              height={64} // or desired size
+                              className="rounded-2xl object-contain bg-white p-2 shadow-md"
+                            />
+                          </Link>
+                        ) : (
+                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                            <MdWork className="w-8 h-8 text-white" />
+                          </div>
+                        )}
                       </div>
                       <div className="flex-grow">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                           <div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-1">{job.title}</h3>
-                            <p className="text-lg text-blue-600 font-semibold">{job.company}</p>
+                            {job.link ? (
+                              <Link href={job.link} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-600 font-semibold hover:underline">
+                                {job.company}
+                              </Link>
+                            ) : (
+                              <p className="text-lg text-blue-600 font-semibold">{job.company}</p>
+                            )}
                           </div>
                           <div className="flex items-center gap-2 text-gray-500 mt-2 md:mt-0">
                             <Calendar className="w-4 h-4" />
